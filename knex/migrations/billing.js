@@ -1,7 +1,10 @@
 exports.up = knex =>
   knex.schema.createTable("billing", table => {
     table.increments("id");
-    table.string("user_id").notNullable();
+    table
+      .string("user_id")
+      .notNullable()
+      .unique();
     table
       .string("token")
       .notNullable()

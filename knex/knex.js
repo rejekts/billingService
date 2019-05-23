@@ -13,6 +13,13 @@ const saveInfo = payload => {
 };
 const updateInfo = payload => {
   //update stuff in db
+  return knex("billing")
+    .where({ user_id: payload.user_id })
+    .update(payload)
+    .then(results => {
+      console.log(results);
+      return results;
+    });
 };
 const getInfo = id => {
   return knex("billing")
@@ -29,4 +36,4 @@ const getInfo = id => {
     });
 };
 
-module.exports = { saveInfo, getInfo };
+module.exports = { saveInfo, getInfo, updateInfo };
