@@ -62,5 +62,5 @@ app.patch("/billing/information", (req, res) => {
 // );
 
 app.listen(port, () => {
-  console.log(`The shenanigans have started on aisle ${port}`);
+  console.log(`The billing service available on port ${port}`);
 });
